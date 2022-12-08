@@ -16,7 +16,6 @@ public class simulationView implements simulationViewInterface {
         System.out.println(" Curent salary of nurse " + nurseName+ ": " + nurseSalary+ "$");
         System.out.println(" Curent salary of cook " + cookName + ": " + cookSalary + "$");
         System.out.println(" Current reputation of " + schoolName + " : " + schoolReputation);
-
         dd += 1;
     }
     

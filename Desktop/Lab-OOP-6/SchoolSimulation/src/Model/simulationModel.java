@@ -10,7 +10,7 @@ public class simulationModel {
     private Adjunct adjunct;
     private AuxiliaryWorker worker1;
     private AuxiliaryWorker worker2;
-    public int dd;
+    public int dd=0;
     public int no_incidents;
 
     public simulationModel(){
@@ -72,6 +72,8 @@ public class simulationModel {
         Random random = new Random();
 
         while (j == 1) {
+            j++;
+            dd++;
             no_incidents = 0;
             scene1 = random.nextFloat();
             if (scene1 <= 0.4) {
@@ -256,7 +258,7 @@ public class simulationModel {
                     worker1.ignoreStudent();
                     student1.fileReport();
                     adjunct.organizeMeeting();
-                    int opt4 = random.nextInt(1, 3);
+                    int opt4 = random.nextInt(3)+1;
                     if (opt4 == 1) {
                         adjunct.fireStaff();
                         worker1.modifySalary(-150);
@@ -275,7 +277,7 @@ public class simulationModel {
                 System.out.println();
                 worker2.enterSchool();
                 worker2.cook();
-                int opt5 = random.nextInt(1, 4);
+                int opt5 = random.nextInt(4)+1;
                 if (opt5 == 1) {
                     worker2.serveFood();
                     student.eats();
@@ -287,7 +289,7 @@ public class simulationModel {
                     worker2.makeSmallerPortions();
                     worker2.serveFood();
                     student.eats();
-                    int opt6 = random.nextInt(1, 3);
+                    int opt6 = random.nextInt(3)+1;
                     if (opt6 == 1) {
                         worker2.satisfied();
                         worker2.modifySalary(100);
